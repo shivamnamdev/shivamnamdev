@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="auto">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- Name Shimmer Gradient -->
+    <linearGradient id="name-grad-light" x1="0%" y1="0%" x2="200%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7">
+        <animate attributeName="offset" values="-1; 1" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#7c3aed">
+        <animate attributeName="offset" values="-0.5; 1.5" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#db2777">
+        <animate attributeName="offset" values="0; 2" dur="4s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Accent Border Gradient -->
+    <linearGradient id="border-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#db2777" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Scanner Line Gradient -->
+    <linearGradient id="laser-grad-light" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0" />
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Ambient Glow Orbs -->
+    <filter id="glow-blur-light" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70" result="blur" />
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="cyber-grid-light" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-opacity="0.1" stroke-width="1" />
+      <circle cx="40" cy="40" r="1" fill="#64748b" fill-opacity="0.2" />
+    </pattern>
+
+    <clipPath id="card-clip-light">
+      <rect x="0" y="0" width="1200" height="480" rx="18" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .cursor { animation: blink 1s infinite; }
+    
+    @keyframes roleCycle {
+      0%, 28% { opacity: 1; transform: translateY(0); }
+      33%, 61% { opacity: 0; transform: translateY(-8px); }
+      66%, 95% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes roleCycle2 {
+      0%, 30% { opacity: 0; transform: translateY(8px); }
+      35%, 63% { opacity: 1; transform: translateY(0); }
+      68%, 100% { opacity: 0; transform: translateY(-8px); }
+    }
+    @keyframes roleCycle3 {
+      0%, 65% { opacity: 0; transform: translateY(8px); }
+      70%, 96% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-8px); }
+    }
+    .role-1 { animation: roleCycle 9s infinite; }
+    .role-2 { animation: roleCycle2 9s infinite; }
+    .role-3 { animation: roleCycle3 9s infinite; }
+
+    @keyframes scanSweep {
+      0% { transform: translateY(-20px); opacity: 0.05; }
+      50% { opacity: 0.5; }
+      100% { transform: translateY(490px); opacity: 0.05; }
+    }
+    .scanner { animation: scanSweep 4.5s ease-in-out infinite; }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+    }
+    .pulse-dot { transform-origin: 68px 74px; animation: pulseGlow 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Card Frame with Clip -->
+  <g clip-path="url(#card-clip-light)">
+    <!-- Base Background -->
+    <rect width="1200" height="480" fill="url(#bg-grad-light)" />
+    
+    <!-- Cyber Grid Overlay -->
+    <rect width="1200" height="480" fill="url(#cyber-grid-light)" />
+
+    <!-- Ambient Glowing Orbs -->
+    <circle cx="200" cy="120" r="140" fill="#38bdf8" fill-opacity="0.1" filter="url(#glow-blur-light)" />
+    <circle cx="950" cy="240" r="160" fill="#a855f7" fill-opacity="0.1" filter="url(#glow-blur-light)" />
+    <circle cx="500" cy="420" r="120" fill="#f43f5e" fill-opacity="0.08" filter="url(#glow-blur-light)" />
+
+    <!-- Moving Laser Scanner -->
+    <g class="scanner">
+      <line x1="0" y1="0" x2="1200" y2="0" stroke="url(#laser-grad-light)" stroke-width="3" />
+    </g>
+
+    <!-- Top Window Titlebar -->
+    <rect x="0" y="0" width="1200" height="42" fill="#ffffff" fill-opacity="0.8" />
+    <line x1="0" y1="42" x2="1200" y2="42" stroke="#e2e8f0" stroke-width="1" />
+    
+    <!-- macOS Window Controls -->
+    <circle cx="28" cy="21" r="5.5" fill="#ef4444" />
+    <circle cx="48" cy="21" r="5.5" fill="#f59e0b" />
+    <circle cx="68" cy="21" r="5.5" fill="#10b981" />
+
+    <!-- Terminal Prompt Centered in Titlebar -->
+    <text x="600" y="26" text-anchor="middle" fill="#64748b" class="font-mono" font-size="12" letter-spacing="1">
+      shivam@macbook-pro: ~ / active-workspace (zsh)
+    </text>
+
+    <!-- ================= LEFT COLUMN ================= -->
+    <g transform="translate(60, 0)">
+      <!-- Status Badge -->
+      <g transform="translate(0, 64)">
+        <rect width="270" height="28" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+        <circle cx="16" cy="14" r="4.5" fill="#059669" class="pulse-dot" />
+        <circle cx="16" cy="14" r="8" fill="#059669" fill-opacity="0.2" class="pulse-dot" />
+        <text x="32" y="18" fill="#334155" class="font-mono" font-size="11" font-weight="600" letter-spacing="0.5">
+          OPEN TO AGENTIC AI COLLABS
+        </text>
+      </g>
+
+      <!-- Salutation -->
+      <text x="0" y="126" fill="#64748b" class="font-mono" font-size="16" letter-spacing="1.5">
+        $ whoami --verbose
+      </text>
+
+      <!-- Big Name with Animated Shimmer -->
+      <text x="0" y="174" fill="url(#name-grad-light)" class="font-sans" font-size="46" font-weight="900" letter-spacing="-1">
+        Shivam Namdev
+      </text>
+
+      <!-- Cycling Animated Role Header -->
+      <g transform="translate(0, 206)">
+        <text class="font-mono role-1" x="0" y="0" fill="#0284c7" font-size="17" font-weight="700">
+          ▶ Lead QA &amp; Platform Engineer
+        </text>
+        <text class="font-mono role-2" x="0" y="0" fill="#7c3aed" font-size="17" font-weight="700">
+          ▶ Agentic AI &amp; Backend Architect
+        </text>
+        <text class="font-mono role-3" x="0" y="0" fill="#db2777" font-size="17" font-weight="700">
+          ▶ Technical Educator &amp; Mentor
+        </text>
+      </g>
+
+      <!-- Value Proposition / Bio Summary -->
+      <text x="0" y="246" fill="#334155" class="font-sans" font-size="14.5" font-weight="500">
+        Transforming software quality through autonomous AI testing agents,
+      </text>
+      <text x="0" y="268" fill="#334155" class="font-sans" font-size="14.5" font-weight="500">
+        resilient platform engineering, and high-performance backend pipelines.
+      </text>
+
+      <!-- Meta Pill Row -->
+      <g transform="translate(0, 304)">
+        <!-- Location Pill -->
+        <g transform="translate(0, 0)">
+          <rect width="130" height="28" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+          <text x="14" y="18" fill="#475569" class="font-sans" font-size="12">📍 Pune, India</text>
+        </g>
+        <!-- Experience Pill -->
+        <g transform="translate(140, 0)">
+          <rect width="135" height="28" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+          <text x="14" y="18" fill="#0284c7" class="font-sans" font-size="12" font-weight="600">⚡ ~7.5 Yrs Exp</text>
+        </g>
+        <!-- Teaching Pill -->
+        <g transform="translate(285, 0)">
+          <rect width="155" height="28" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+          <text x="14" y="18" fill="#7c3aed" class="font-sans" font-size="12">🎓 Educator &amp; Builder</text>
+        </g>
+      </g>
+
+      <!-- Tech Stack Badges Row -->
+      <g transform="translate(0, 360)">
+        <text x="0" y="0" fill="#64748b" class="font-mono" font-size="11" font-weight="700" letter-spacing="1">PRIMARY TECH STACK</text>
+        
+        <g transform="translate(0, 12)">
+          <!-- Python -->
+          <rect x="0" y="0" width="70" height="26" rx="6" fill="#ffffff" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1" />
+          <text x="35" y="17" fill="#0369a1" text-anchor="middle" class="font-mono" font-size="12" font-weight="600">Python</text>
+
+          <!-- TypeScript -->
+          <rect x="80" y="0" width="92" height="26" rx="6" fill="#ffffff" stroke="#0ea5e9" stroke-opacity="0.4" stroke-width="1" />
+          <text x="126" y="17" fill="#0284c7" text-anchor="middle" class="font-mono" font-size="12" font-weight="600">TypeScript</text>
+
+          <!-- Playwright -->
+          <rect x="182" y="0" width="88" height="26" rx="6" fill="#ffffff" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+          <text x="226" y="17" fill="#059669" text-anchor="middle" class="font-mono" font-size="12" font-weight="600">Playwright</text>
+
+          <!-- Docker -->
+          <rect x="280" y="0" width="72" height="26" rx="6" fill="#ffffff" stroke="#0284c7" stroke-opacity="0.4" stroke-width="1" />
+          <text x="316" y="17" fill="#0284c7" text-anchor="middle" class="font-mono" font-size="12" font-weight="600">Docker</text>
+
+          <!-- Agentic AI -->
+          <rect x="362" y="0" width="94" height="26" rx="6" fill="#fdf4ff" stroke="#c084fc" stroke-opacity="0.6" stroke-width="1" />
+          <text x="409" y="17" fill="#a21caf" text-anchor="middle" class="font-mono" font-size="12" font-weight="700">Agentic AI</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ================= RIGHT COLUMN: CODE CARD ================= -->
+    <g transform="translate(620, 64)">
+      <rect width="520" height="370" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      
+      <!-- Code Header -->
+      <rect width="520" height="34" rx="12" fill="#f8fafc" />
+      <line x1="0" y1="34" x2="520" y2="34" stroke="#e2e8f0" stroke-width="1" />
+      
+      <circle cx="20" cy="17" r="4" fill="#ef4444" fill-opacity="0.8" />
+      <circle cx="34" cy="17" r="4" fill="#f59e0b" fill-opacity="0.8" />
+      <circle cx="48" cy="17" r="4" fill="#10b981" fill-opacity="0.8" />
+      
+      <text x="74" y="21" fill="#475569" class="font-mono" font-size="11">ai_test_generator.py</text>
+      <text x="495" y="21" fill="#94a3b8" class="font-mono" font-size="10" text-anchor="end">UTF-8 • Python 3.12</text>
+
+      <!-- Code Lines with Light-mode Syntax Colors -->
+      <g transform="translate(24, 60)" class="font-mono" font-size="12.5" letter-spacing="0.2">
+        <text y="0" fill="#64748b"># Autonomous Quality Agent Architecture</text>
+        
+        <text y="24">
+          <tspan fill="#db2777">from</tspan> <tspan fill="#0284c7">agentic_core</tspan> <tspan fill="#db2777">import</tspan> <tspan fill="#7c3aed">AutonomousTester</tspan>
+        </text>
+        
+        <text y="46">
+          <tspan fill="#db2777">from</tspan> <tspan fill="#0284c7">qa_platform</tspan> <tspan fill="#db2777">import</tspan> <tspan fill="#7c3aed">PlaywrightRunner</tspan>, <tspan fill="#7c3aed">DockerEnv</tspan>
+        </text>
+        
+        <text y="78">
+          <tspan fill="#db2777">class</tspan> <tspan fill="#7c3aed">AITesterBlueprint</tspan>:
+        </text>
+        
+        <text y="100">
+          <tspan fill="#334155">    def __init__(self, target_service: str):</tspan>
+        </text>
+        
+        <text y="122">
+          <tspan fill="#334155">        self.agent = </tspan><tspan fill="#7c3aed">AutonomousTester</tspan><tspan fill="#334155">(role=</tspan><tspan fill="#059669">"QA Lead"</tspan><tspan fill="#334155">)</tspan>
+        </text>
+        
+        <text y="144">
+          <tspan fill="#334155">        self.runner = </tspan><tspan fill="#7c3aed">PlaywrightRunner</tspan><tspan fill="#334155">(headless=</tspan><tspan fill="#db2777">True</tspan><tspan fill="#334155">)</tspan>
+        </text>
+        
+        <text y="176">
+          <tspan fill="#db2777">    async def</tspan> <tspan fill="#0284c7">synthesize_and_verify</tspan><tspan fill="#334155">(self):</tspan>
+        </text>
+        
+        <text y="198">
+          <tspan fill="#334155">        spec = await self.agent.analyze_endpoints()</tspan>
+        </text>
+        
+        <text y="220">
+          <tspan fill="#334155">        tests = await self.agent.generate_assertions(spec)</tspan>
+        </text>
+        
+        <text y="242">
+          <tspan fill="#334155">        return await self.runner.execute(tests)</tspan>
+        </text>
+        
+        <text y="278">
+          <tspan fill="#059669">✓ 42 scenarios generated &amp; passed in 1.4s</tspan>
+        </text>
+        
+        <!-- Blinking Terminal Cursor -->
+        <rect x="330" y="266" width="8" height="15" fill="#0284c7" class="cursor" />
+      </g>
+    </g>
+
+    <!-- Exterior Border -->
+    <rect x="1" y="1" width="1198" height="478" rx="17" fill="none" stroke="url(#border-grad-light)" stroke-width="1.5" />
+  </g>
+</svg>
