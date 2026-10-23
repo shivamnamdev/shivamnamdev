@@ -1,11 +1,7 @@
 <div align="center">
 
-  <!-- ================= 1. HERO BANNER (AUTO DARK/LIGHT SWITCHING) ================= -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="banner.svg?v=1">
-    <source media="(prefers-color-scheme: light)" srcset="banner-light.svg?v=1">
-    <img src="banner.svg?v=1" width="100%" alt="Shivam Namdev — Lead QA & Platform Engineer | Agentic AI">
-  </picture>
+  <!-- ================= 1. HERO VIEWFINDER & WALKING AVATAR ================= -->
+  <img src="hero.svg?v=1" width="100%" alt="Shivam Namdev — Lead QA & Platform Architect | Camera Viewfinder Hero">
 
   <br/><br/>
 
