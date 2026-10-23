@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" width="100%" height="auto" role="img" aria-label="Let's Connect and Collaborate">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="conn-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14172a" />
+      <stop offset="100%" stop-color="#0e101f" />
+    </linearGradient>
+
+    <!-- Outer Border -->
+    <linearGradient id="conn-edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.5" />
+    </linearGradient>
+
+    <pattern id="conn-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="0.8" fill="#ffffff" fill-opacity="0.05" />
+    </pattern>
+
+    <filter id="conn-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    /* Animated Nudging Arrows */
+    @keyframes arrowNudge {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(6px); }
+    }
+    .arrow-nudge { animation: arrowNudge 1.6s ease-in-out infinite; }
+
+    /* Card Glow Fade */
+    @keyframes cardPulse {
+      0%, 100% { stroke-opacity: 0.2; }
+      50% { stroke-opacity: 0.8; }
+    }
+    .card-pulse-1 { animation: cardPulse 3s ease-in-out infinite; }
+    .card-pulse-2 { animation: cardPulse 3s ease-in-out infinite 0.75s; }
+    .card-pulse-3 { animation: cardPulse 3s ease-in-out infinite 1.5s; }
+    .card-pulse-4 { animation: cardPulse 3s ease-in-out infinite 2.25s; }
+
+    /* Ambient float */
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -15px); }
+    }
+    .ambient-orb { animation: floatOrb 8s ease-in-out infinite; }
+  </style>
+
+  <!-- Base Card Background -->
+  <rect width="1280" height="480" rx="24" fill="url(#conn-bg)" />
+  <rect width="1280" height="480" rx="24" fill="url(#conn-dots)" />
+  <rect x="0.75" y="0.75" width="1278.5" height="478.5" rx="23.25" fill="none" stroke="url(#conn-edge)" stroke-width="1.5" />
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="220" cy="240" r="120" fill="#a855f7" fill-opacity="0.12" filter="url(#conn-glow)" class="ambient-orb" />
+  <circle cx="1050" cy="240" r="130" fill="#22d3ee" fill-opacity="0.1" filter="url(#conn-glow)" class="ambient-orb" />
+
+  <!-- ================= LEFT: HERO INVITATION ================= -->
+  <g transform="translate(80, 110)">
+    <!-- Tagline -->
+    <text x="0" y="20" fill="#f472b6" class="font-mono" font-size="13" font-weight="700" letter-spacing="2.2">
+      // LET'S CONNECT &amp; COLLABORATE
+    </text>
+
+    <!-- Headline -->
+    <text x="0" y="68" fill="#f8fafc" class="font-sans" font-size="34" font-weight="900" letter-spacing="-0.5">
+      Let's build something
+    </text>
+    <text x="0" y="110" fill="#f8fafc" class="font-sans" font-size="34" font-weight="900" letter-spacing="-0.5">
+      autonomous &amp; exceptional.
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="155" fill="#94a3b8" class="font-sans" font-size="15.5">
+      Open to Agentic AI collaborations, quality engineering consulting,
+    </text>
+    <text x="0" y="180" fill="#94a3b8" class="font-sans" font-size="15.5">
+      curriculum development, and technical mentorship.
+    </text>
+
+    <!-- Location Status -->
+    <g transform="translate(0, 220)">
+      <rect width="280" height="32" rx="16" fill="#11162d" stroke="#222a4c" stroke-width="1" />
+      <circle cx="18" cy="16" r="4" fill="#10b981" />
+      <text x="32" y="20" fill="#38bdf8" class="font-mono" font-size="11.5" font-weight="600">
+        PUNE, INDIA • AVAILABLE REMOTELY
+      </text>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT: 4 CONNECT BRAND CARDS ================= -->
+  <g transform="translate(600, 75)">
+    
+    <!-- CARD 1: LinkedIn (Top-Left) -->
+    <g transform="translate(0, 0)">
+      <rect width="300" height="105" rx="16" fill="#11152a" stroke="#0077b5" stroke-width="1.2" class="card-pulse-1" />
+      <rect x="20" y="24" width="50" height="50" rx="12" fill="#0077b5" fill-opacity="0.18" />
+      <text x="45" y="55" fill="#0077b5" font-size="22" text-anchor="middle" class="font-sans">in</text>
+      
+      <text x="86" y="46" fill="#ffffff" class="font-sans" font-size="16" font-weight="700">LinkedIn</text>
+      <text x="86" y="68" fill="#94a3b8" class="font-mono" font-size="11.5">in/shivam-namdev</text>
+      
+      <g transform="translate(260, 52)" class="arrow-nudge">
+        <path d="M -6 0 H 6 M 2 -4 L 6 0 L 2 4" fill="none" stroke="#0077b5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </g>
+
+    <!-- CARD 2: GitHub (Top-Right) -->
+    <g transform="translate(325, 0)">
+      <rect width="300" height="105" rx="16" fill="#11152a" stroke="#22d3ee" stroke-width="1.2" class="card-pulse-2" />
+      <rect x="20" y="24" width="50" height="50" rx="12" fill="#22d3ee" fill-opacity="0.15" />
+      <text x="45" y="55" fill="#22d3ee" font-size="20" text-anchor="middle">🐙</text>
+      
+      <text x="86" y="46" fill="#ffffff" class="font-sans" font-size="16" font-weight="700">GitHub</text>
+      <text x="86" y="68" fill="#94a3b8" class="font-mono" font-size="11.5">@shivamnamdev</text>
+      
+      <g transform="translate(260, 52)" class="arrow-nudge">
+        <path d="M -6 0 H 6 M 2 -4 L 6 0 L 2 4" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </g>
+
+    <!-- CARD 3: Email (Bottom-Left) -->
+    <g transform="translate(0, 130)">
+      <rect width="300" height="105" rx="16" fill="#11152a" stroke="#f472b6" stroke-width="1.2" class="card-pulse-3" />
+      <rect x="20" y="24" width="50" height="50" rx="12" fill="#f472b6" fill-opacity="0.15" />
+      <text x="45" y="55" fill="#f472b6" font-size="20" text-anchor="middle">✉️</text>
+      
+      <text x="86" y="46" fill="#ffffff" class="font-sans" font-size="16" font-weight="700">Direct Email</text>
+      <text x="86" y="68" fill="#94a3b8" class="font-mono" font-size="10.5">shivamnamdev.corp@gmail.com</text>
+      
+      <g transform="translate(260, 52)" class="arrow-nudge">
+        <path d="M -6 0 H 6 M 2 -4 L 6 0 L 2 4" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </g>
+
+    <!-- CARD 4: Mentorship & Projects (Bottom-Right) -->
+    <g transform="translate(325, 130)">
+      <rect width="300" height="105" rx="16" fill="#11152a" stroke="#34d399" stroke-width="1.2" class="card-pulse-4" />
+      <rect x="20" y="24" width="50" height="50" rx="12" fill="#34d399" fill-opacity="0.15" />
+      <text x="45" y="55" fill="#34d399" font-size="20" text-anchor="middle">🎓</text>
+      
+      <text x="86" y="46" fill="#ffffff" class="font-sans" font-size="16" font-weight="700">Mentorship &amp; QA</text>
+      <text x="86" y="68" fill="#94a3b8" class="font-mono" font-size="11.5">Explore Repos &amp; Courses</text>
+      
+      <g transform="translate(260, 52)" class="arrow-nudge">
+        <path d="M -6 0 H 6 M 2 -4 L 6 0 L 2 4" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </g>
+
+    <!-- Quote at Bottom -->
+    <g transform="translate(0, 268)">
+      <text x="312" y="20" text-anchor="middle" fill="#94a3b8" class="font-mono" font-size="12.5">
+        &#8220;<tspan fill="#22d3ee">Automate the mundane</tspan>, <tspan fill="#f472b6">engineer the exceptional</tspan>.&#8221;
+      </text>
+    </g>
+  </g>
+</svg>

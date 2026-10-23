@@ -1,0 +1,346 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="100%" height="auto" role="img" aria-label="Developer Capabilities and Life Beyond Code">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="al-cardbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16192b" />
+      <stop offset="100%" stop-color="#101222" />
+    </linearGradient>
+
+    <linearGradient id="al-edgeL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#252b48" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="al-edgeR" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#252b48" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Dot Pattern -->
+    <pattern id="al-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.8" fill="#ffffff" fill-opacity="0.05" />
+    </pattern>
+
+    <!-- Slide Clips -->
+    <clipPath id="al-browser-clip">
+      <rect x="30" y="115" width="560" height="495" rx="14" />
+    </clipPath>
+    
+    <clipPath id="al-story-clip">
+      <rect x="690" y="115" width="560" height="495" rx="14" />
+    </clipPath>
+
+    <!-- Filter for Glow -->
+    <filter id="al-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+    /* Cursor animation */
+    @keyframes alBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .al-cursor { animation: alBlink 1s infinite; }
+
+    /* Stories Carousel Animation (12s cycle, 3 slides: 4s each) */
+    @keyframes alSlide1 {
+      0%, 30% { opacity: 1; transform: translateX(0); }
+      33.3%, 96.6% { opacity: 0; transform: translateX(20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes alSlide2 {
+      0%, 30% { opacity: 0; transform: translateX(-20px); }
+      33.3%, 63.3% { opacity: 1; transform: translateX(0); }
+      66.6%, 100% { opacity: 0; transform: translateX(20px); }
+    }
+    @keyframes alSlide3 {
+      0%, 63.3% { opacity: 0; transform: translateX(-20px); }
+      66.6%, 96.6% { opacity: 1; transform: translateX(0); }
+      100% { opacity: 0; transform: translateX(-20px); }
+    }
+
+    .al-slide-1 { animation: alSlide1 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
+    .al-slide-2 { animation: alSlide2 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
+    .al-slide-3 { animation: alSlide3 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
+
+    /* Segment Progress Bars */
+    @keyframes alBar1 {
+      0% { width: 0px; }
+      28%, 100% { width: 170px; }
+    }
+    @keyframes alBar2 {
+      0%, 33.3% { width: 0px; }
+      61%, 100% { width: 170px; }
+    }
+    @keyframes alBar3 {
+      0%, 66.6% { width: 0px; }
+      95%, 100% { width: 170px; }
+    }
+    .al-prog-1 { animation: alBar1 12s linear infinite; }
+    .al-prog-2 { animation: alBar2 12s linear infinite; }
+    .al-prog-3 { animation: alBar3 12s linear infinite; }
+
+    /* Activity Rings */
+    @keyframes ringFill {
+      0% { stroke-dashoffset: 150; }
+      50% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 150; }
+    }
+    .ring-code { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite; }
+    .ring-learn { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite 0.8s; }
+    .ring-health { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite 1.6s; }
+  </style>
+
+  <!-- ================= LEFT CARD: WHAT I BUILD ================= -->
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-cardbg)" />
+    <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-dots)" />
+    <rect x="0.75" y="0.75" width="618.5" height="638.5" rx="23.25" fill="none" stroke="url(#al-edgeL)" stroke-width="1.5" />
+
+    <!-- Card Header -->
+    <text x="32" y="46" fill="#22d3ee" class="font-mono" font-size="12" font-weight="700" letter-spacing="2">
+      // ARCHITECTURE &amp; ENGINEERING
+    </text>
+    <text x="32" y="86" fill="#f8fafc" class="font-sans" font-size="28" font-weight="800" letter-spacing="-0.5">
+      Autonomous QA &amp; Platforms
+    </text>
+
+    <!-- Browser Window Frame -->
+    <g clip-path="url(#al-browser-clip)">
+      <rect x="30" y="115" width="560" height="495" fill="#0c0e1a" stroke="#1e2544" stroke-width="1" />
+      
+      <!-- Window Titlebar -->
+      <rect x="30" y="115" width="560" height="38" fill="#12162a" />
+      <line x1="30" y1="153" x2="590" y2="153" stroke="#1e2544" stroke-width="1" />
+      
+      <circle cx="50" cy="134" r="4.5" fill="#ef4444" />
+      <circle cx="66" cy="134" r="4.5" fill="#f59e0b" />
+      <circle cx="82" cy="134" r="4.5" fill="#10b981" />
+
+      <!-- URL Pill -->
+      <rect x="110" y="123" width="320" height="22" rx="6" fill="#090b14" stroke="#1d2442" stroke-width="1" />
+      <text x="122" y="138" fill="#10b981" class="font-mono" font-size="10.5">🔒</text>
+      <text x="138" y="138" fill="#94a3b8" class="font-mono" font-size="11">shivam.dev/agentic-platform</text>
+      <rect x="316" y="128" width="6" height="12" fill="#22d3ee" class="al-cursor" />
+
+      <!-- Feature Row 1: Autonomous QA -->
+      <g transform="translate(54, 175)">
+        <rect width="512" height="95" rx="12" fill="#11152a" stroke="#232b4e" stroke-width="1" />
+        <circle cx="34" cy="48" r="18" fill="#1e1b3d" stroke="#8b5cf6" stroke-width="1.5" />
+        <text x="34" y="54" fill="#c084fc" font-size="18" text-anchor="middle">🤖</text>
+        <text x="68" y="38" fill="#ffffff" class="font-sans" font-size="15" font-weight="700">
+          Agentic AI Test Synthesis
+        </text>
+        <text x="68" y="60" fill="#94a3b8" class="font-sans" font-size="12">
+          LLM-driven exploratory testing, self-healing Playwright scripts,
+        </text>
+        <text x="68" y="78" fill="#38bdf8" class="font-mono" font-size="11">
+          and automated visual assertion generators (AITesterBlueprint).
+        </text>
+      </g>
+
+      <!-- Feature Row 2: Enterprise CI/CD -->
+      <g transform="translate(54, 285)">
+        <rect width="512" height="95" rx="12" fill="#11152a" stroke="#232b4e" stroke-width="1" />
+        <circle cx="34" cy="48" r="18" fill="#0e263d" stroke="#0ea5e9" stroke-width="1.5" />
+        <text x="34" y="54" fill="#38bdf8" font-size="18" text-anchor="middle">⚡</text>
+        <text x="68" y="38" fill="#ffffff" class="font-sans" font-size="15" font-weight="700">
+          Resilient Platform Engineering
+        </text>
+        <text x="68" y="60" fill="#94a3b8" class="font-sans" font-size="12">
+          Containerized parallel test execution in Docker &amp; Kubernetes.
+        </text>
+        <text x="68" y="78" fill="#4ade80" class="font-mono" font-size="11">
+          Zero-flakiness quality gates with sub-2-minute feedback loops.
+        </text>
+      </g>
+
+      <!-- Feature Row 3: Modern Backend -->
+      <g transform="translate(54, 395)">
+        <rect width="512" height="95" rx="12" fill="#11152a" stroke="#232b4e" stroke-width="1" />
+        <circle cx="34" cy="48" r="18" fill="#2b1836" stroke="#ec4899" stroke-width="1.5" />
+        <text x="34" y="54" fill="#f472b6" font-size="18" text-anchor="middle">⚙️</text>
+        <text x="68" y="38" fill="#ffffff" class="font-sans" font-size="15" font-weight="700">
+          Backend Microservices &amp; APIs
+        </text>
+        <text x="68" y="60" fill="#94a3b8" class="font-sans" font-size="12">
+          Type-safe Python (FastAPI) &amp; TypeScript backend architectures,
+        </text>
+        <text x="68" y="78" fill="#facc15" class="font-mono" font-size="11">
+          event-driven message queues, and high-coverage test suites.
+        </text>
+      </g>
+
+      <!-- Bottom Tagline -->
+      <text x="310" y="550" text-anchor="middle" fill="#64748b" class="font-mono" font-size="11.5">
+        ~7.5+ Years of Proven Quality &amp; Platform Leadership
+      </text>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT CARD: LIFE BEYOND CODE ================= -->
+  <g transform="translate(660, 0)">
+    <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-cardbg)" />
+    <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-dots)" />
+    <rect x="0.75" y="0.75" width="618.5" height="638.5" rx="23.25" fill="none" stroke="url(#al-edgeR)" stroke-width="1.5" />
+
+    <!-- Card Header -->
+    <text x="32" y="46" fill="#f472b6" class="font-mono" font-size="12" font-weight="700" letter-spacing="2">
+      // BEYOND THE TERMINAL
+    </text>
+    <text x="32" y="86" fill="#f8fafc" class="font-sans" font-size="28" font-weight="800" letter-spacing="-0.5">
+      Mentorship &amp; Continuous Growth
+    </text>
+
+    <!-- Instagram Story Window Frame -->
+    <g clip-path="url(#al-story-clip)">
+      <rect x="690" y="115" width="560" height="495" fill="#0c0e1a" stroke="#1e2544" stroke-width="1" />
+
+      <!-- Story Progress Bars Header (3 Segments) -->
+      <g transform="translate(710, 130)">
+        <!-- Segment 1 Background & Progress -->
+        <rect x="0" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
+        <rect x="0" y="0" width="0" height="3.5" rx="2" fill="#22d3ee" class="al-prog-1" />
+
+        <!-- Segment 2 Background & Progress -->
+        <rect x="178" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
+        <rect x="178" y="0" width="0" height="3.5" rx="2" fill="#a78bfa" class="al-prog-2" />
+
+        <!-- Segment 3 Background & Progress -->
+        <rect x="356" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
+        <rect x="356" y="0" width="0" height="3.5" rx="2" fill="#f472b6" class="al-prog-3" />
+      </g>
+
+      <!-- Story Profile Header -->
+      <g transform="translate(710, 150)">
+        <circle cx="16" cy="16" r="16" fill="#1e2544" stroke="#22d3ee" stroke-width="1.5" />
+        <text x="16" y="21" fill="#ffffff" font-size="14" text-anchor="middle">👨‍🏫</text>
+        <text x="42" y="17" fill="#ffffff" class="font-sans" font-size="13" font-weight="700">shivam.namdev</text>
+        <text x="42" y="30" fill="#64748b" class="font-mono" font-size="10.5">active 2m ago • Pune, IN</text>
+      </g>
+
+      <!-- ================= SLIDE 1: MENTORSHIP ================= -->
+      <g class="al-slide-1" transform="translate(710, 195)">
+        <rect width="520" height="260" rx="16" fill="#11162d" stroke="#222c54" stroke-width="1" />
+        
+        <rect x="24" y="24" width="130" height="24" rx="6" fill="#0d283e" />
+        <text x="89" y="40" fill="#38bdf8" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          🎓 TECH EDUCATOR
+        </text>
+
+        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          Empowering Next-Gen Engineers
+        </text>
+        
+        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Author of "learn-python-step-by-step" open course. Passionate about
+        </text>
+        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          demystifying test automation, Docker fundamentals, and Playwright
+        </text>
+        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          for career switchers and aspiring platform specialists.
+        </text>
+
+        <g transform="translate(24, 190)">
+          <rect width="200" height="44" rx="8" fill="#182142" stroke="#27376a" stroke-width="1" />
+          <text x="16" y="22" fill="#38bdf8" class="font-mono" font-size="14" font-weight="800">500+</text>
+          <text x="60" y="22" fill="#94a3b8" class="font-sans" font-size="11">Engineers Mentored</text>
+          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Python • QA • DevOps</text>
+        </g>
+      </g>
+
+      <!-- ================= SLIDE 2: RESEARCH ================= -->
+      <g class="al-slide-2" transform="translate(710, 195)">
+        <rect width="520" height="260" rx="16" fill="#16122d" stroke="#312257" stroke-width="1" />
+        
+        <rect x="24" y="24" width="150" height="24" rx="6" fill="#2e1545" />
+        <text x="99" y="40" fill="#c084fc" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          🔬 AGENTIC RESEARCH
+        </text>
+
+        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          Exploring LLMs &amp; Deep Evals
+        </text>
+        
+        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Constantly experimenting with multi-agent orchestration, LangGraph,
+        </text>
+        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          and rigorous benchmarking suites to create self-healing, reliable
+        </text>
+        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          software pipelines that operate autonomously in production.
+        </text>
+
+        <g transform="translate(24, 190)">
+          <rect width="200" height="44" rx="8" fill="#22163b" stroke="#422974" stroke-width="1" />
+          <text x="16" y="22" fill="#c084fc" class="font-mono" font-size="14" font-weight="800">100%</text>
+          <text x="60" y="22" fill="#94a3b8" class="font-sans" font-size="11">Hands-on Driven</text>
+          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Open Source Advocate</text>
+        </g>
+      </g>
+
+      <!-- ================= SLIDE 3: FITNESS & MINDSET ================= -->
+      <g class="al-slide-3" transform="translate(710, 195)">
+        <rect width="520" height="260" rx="16" fill="#241223" stroke="#4e1e47" stroke-width="1" />
+        
+        <rect x="24" y="24" width="160" height="24" rx="6" fill="#3d1334" />
+        <text x="104" y="40" fill="#f472b6" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          ⚡ DISCIPLINE &amp; FITNESS
+        </text>
+
+        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          High Endurance &amp; Focus
+        </text>
+        
+        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Consistency inside the gym mirrors engineering excellence:
+        </text>
+        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          structured routines, deliberate practice, continuous iteration,
+        </text>
+        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          and fuel powered by artisanal coffee and clear thinking.
+        </text>
+
+        <g transform="translate(24, 190)">
+          <rect width="200" height="44" rx="8" fill="#30162a" stroke="#5f2452" stroke-width="1" />
+          <text x="16" y="22" fill="#f472b6" class="font-mono" font-size="14" font-weight="800">DAILY</text>
+          <text x="66" y="22" fill="#94a3b8" class="font-sans" font-size="11">Fitness Routine</text>
+          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Mindset &amp; Resilience</text>
+        </g>
+      </g>
+
+      <!-- Bottom Activity Rings Indicator -->
+      <g transform="translate(710, 480)">
+        <!-- Ring 1: Code -->
+        <g transform="translate(40, 40)">
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#22d3ee" stroke-width="4" class="ring-code" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#22d3ee" font-size="10" text-anchor="middle" class="font-mono">CODE</text>
+        </g>
+        <!-- Ring 2: Learn -->
+        <g transform="translate(130, 40)">
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#a78bfa" stroke-width="4" class="ring-learn" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#a78bfa" font-size="10" text-anchor="middle" class="font-mono">TEACH</text>
+        </g>
+        <!-- Ring 3: Mindset -->
+        <g transform="translate(220, 40)">
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#f472b6" stroke-width="4" class="ring-health" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#f472b6" font-size="10" text-anchor="middle" class="font-mono">GROW</text>
+        </g>
+
+        <text x="280" y="44" fill="#64748b" class="font-mono" font-size="11">
+          "Continuous improvement is better than delayed perfection."
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
