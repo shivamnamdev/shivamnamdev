@@ -10,7 +10,7 @@
   <br/><br/>
 
   <!-- ================= 2. WHAT I BUILD & LIFE BEYOND CODE ================= -->
-  <img src="about-life.svg?v=1" width="100%" alt="What I build, and life beyond the terminal" />
+  <img src="about-life.svg?v=2" width="100%" alt="What I build, and life beyond the terminal" />
 
   <br/><br/>
 

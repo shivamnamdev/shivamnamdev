@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="100%" height="auto" role="img" aria-label="Developer Capabilities and Life Beyond Code">
   <defs>
-    <!-- Gradients -->
+    <!-- Card Gradients -->
     <linearGradient id="al-cardbg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#16192b" />
       <stop offset="100%" stop-color="#101222" />
@@ -13,9 +13,25 @@
     </linearGradient>
 
     <linearGradient id="al-edgeR" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#252b48" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#34d399" stop-opacity="0.6" />
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Specific Hobby Gradients -->
+    <linearGradient id="mma-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+
+    <linearGradient id="psy-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="trv-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
 
     <!-- Dot Pattern -->
@@ -23,7 +39,7 @@
       <circle cx="12" cy="12" r="0.8" fill="#ffffff" fill-opacity="0.05" />
     </pattern>
 
-    <!-- Slide Clips -->
+    <!-- Window Clips -->
     <clipPath id="al-browser-clip">
       <rect x="30" y="115" width="560" height="495" rx="14" />
     </clipPath>
@@ -31,43 +47,38 @@
     <clipPath id="al-story-clip">
       <rect x="690" y="115" width="560" height="495" rx="14" />
     </clipPath>
-
-    <!-- Filter for Glow -->
-    <filter id="al-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur" />
-    </filter>
   </defs>
 
   <style>
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
     .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
-    /* Cursor animation */
+    /* Cursor */
     @keyframes alBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .al-cursor { animation: alBlink 1s infinite; }
 
-    /* Stories Carousel Animation (12s cycle, 3 slides: 4s each) */
+    /* Stories Carousel (12s infinite loop: 3 slides x 4s) */
     @keyframes alSlide1 {
       0%, 30% { opacity: 1; transform: translateX(0); }
-      33.3%, 96.6% { opacity: 0; transform: translateX(20px); }
+      33.3%, 96.6% { opacity: 0; transform: translateX(24px); }
       100% { opacity: 1; transform: translateX(0); }
     }
     @keyframes alSlide2 {
-      0%, 30% { opacity: 0; transform: translateX(-20px); }
+      0%, 30% { opacity: 0; transform: translateX(-24px); }
       33.3%, 63.3% { opacity: 1; transform: translateX(0); }
-      66.6%, 100% { opacity: 0; transform: translateX(20px); }
+      66.6%, 100% { opacity: 0; transform: translateX(24px); }
     }
     @keyframes alSlide3 {
-      0%, 63.3% { opacity: 0; transform: translateX(-20px); }
+      0%, 63.3% { opacity: 0; transform: translateX(-24px); }
       66.6%, 96.6% { opacity: 1; transform: translateX(0); }
-      100% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 0; transform: translateX(-24px); }
     }
 
     .al-slide-1 { animation: alSlide1 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
     .al-slide-2 { animation: alSlide2 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
     .al-slide-3 { animation: alSlide3 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
 
-    /* Segment Progress Bars */
+    /* Story Segment Bars */
     @keyframes alBar1 {
       0% { width: 0px; }
       28%, 100% { width: 170px; }
@@ -85,14 +96,14 @@
     .al-prog-3 { animation: alBar3 12s linear infinite; }
 
     /* Activity Rings */
-    @keyframes ringFill {
+    @keyframes ringCombat {
       0% { stroke-dashoffset: 150; }
-      50% { stroke-dashoffset: 20; }
+      50% { stroke-dashoffset: 15; }
       100% { stroke-dashoffset: 150; }
     }
-    .ring-code { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite; }
-    .ring-learn { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite 0.8s; }
-    .ring-health { stroke-dasharray: 150; animation: ringFill 6s ease-in-out infinite 1.6s; }
+    .ring-mma { stroke-dasharray: 150; animation: ringCombat 6s ease-in-out infinite; }
+    .ring-psy { stroke-dasharray: 150; animation: ringCombat 6s ease-in-out infinite 0.8s; }
+    .ring-trv { stroke-dasharray: 150; animation: ringCombat 6s ease-in-out infinite 1.6s; }
   </style>
 
   <!-- ================= LEFT CARD: WHAT I BUILD ================= -->
@@ -143,7 +154,7 @@
         </text>
       </g>
 
-      <!-- Feature Row 2: Enterprise CI/CD -->
+      <!-- Feature Row 2: Enterprise Platform CI/CD -->
       <g transform="translate(54, 285)">
         <rect width="512" height="95" rx="12" fill="#11152a" stroke="#232b4e" stroke-width="1" />
         <circle cx="34" cy="48" r="18" fill="#0e263d" stroke="#0ea5e9" stroke-width="1.5" />
@@ -182,7 +193,7 @@
     </g>
   </g>
 
-  <!-- ================= RIGHT CARD: LIFE BEYOND CODE ================= -->
+  <!-- ================= RIGHT CARD: LIFE BEYOND CODE (HOBBY SUITE) ================= -->
   <g transform="translate(660, 0)">
     <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-cardbg)" />
     <rect x="0" y="0" width="620" height="640" rx="24" fill="url(#al-dots)" />
@@ -193,152 +204,182 @@
       // BEYOND THE TERMINAL
     </text>
     <text x="32" y="86" fill="#f8fafc" class="font-sans" font-size="28" font-weight="800" letter-spacing="-0.5">
-      Mentorship &amp; Continuous Growth
+      Hobbies, Mindset &amp; Journeys
     </text>
 
     <!-- Instagram Story Window Frame -->
     <g clip-path="url(#al-story-clip)">
       <rect x="690" y="115" width="560" height="495" fill="#0c0e1a" stroke="#1e2544" stroke-width="1" />
 
-      <!-- Story Progress Bars Header (3 Segments) -->
+      <!-- Story Progress Bars Header (3 Segments: MMA, Psych/Sci-Fi, Travel) -->
       <g transform="translate(710, 130)">
-        <!-- Segment 1 Background & Progress -->
+        <!-- Segment 1: MMA -->
         <rect x="0" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
-        <rect x="0" y="0" width="0" height="3.5" rx="2" fill="#22d3ee" class="al-prog-1" />
+        <rect x="0" y="0" width="0" height="3.5" rx="2" fill="#ef4444" class="al-prog-1" />
 
-        <!-- Segment 2 Background & Progress -->
+        <!-- Segment 2: Psychology & Sci-Fi -->
         <rect x="178" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
         <rect x="178" y="0" width="0" height="3.5" rx="2" fill="#a78bfa" class="al-prog-2" />
 
-        <!-- Segment 3 Background & Progress -->
+        <!-- Segment 3: Travel with Strangers -->
         <rect x="356" y="0" width="170" height="3.5" rx="2" fill="#1f294d" />
-        <rect x="356" y="0" width="0" height="3.5" rx="2" fill="#f472b6" class="al-prog-3" />
+        <rect x="356" y="0" width="0" height="3.5" rx="2" fill="#10b981" class="al-prog-3" />
       </g>
 
       <!-- Story Profile Header -->
       <g transform="translate(710, 150)">
-        <circle cx="16" cy="16" r="16" fill="#1e2544" stroke="#22d3ee" stroke-width="1.5" />
-        <text x="16" y="21" fill="#ffffff" font-size="14" text-anchor="middle">👨‍🏫</text>
+        <circle cx="16" cy="16" r="16" fill="#1e2544" stroke="#ef4444" stroke-width="1.5" />
+        <text x="16" y="21" fill="#ffffff" font-size="14" text-anchor="middle">🥋</text>
         <text x="42" y="17" fill="#ffffff" class="font-sans" font-size="13" font-weight="700">shivam.namdev</text>
-        <text x="42" y="30" fill="#64748b" class="font-mono" font-size="10.5">active 2m ago • Pune, IN</text>
+        <text x="42" y="30" fill="#64748b" class="font-mono" font-size="10.5">stories • active passions • Pune &amp; Worldwide</text>
       </g>
 
-      <!-- ================= SLIDE 1: MENTORSHIP ================= -->
+      <!-- ================= SLIDE 1: MMA TRAINING ================= -->
       <g class="al-slide-1" transform="translate(710, 195)">
-        <rect width="520" height="260" rx="16" fill="#11162d" stroke="#222c54" stroke-width="1" />
+        <rect width="520" height="265" rx="16" fill="#18101e" stroke="#3b1c2b" stroke-width="1" />
         
-        <rect x="24" y="24" width="130" height="24" rx="6" fill="#0d283e" />
-        <text x="89" y="40" fill="#38bdf8" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
-          🎓 TECH EDUCATOR
+        <!-- Badge -->
+        <rect x="24" y="22" width="145" height="24" rx="6" fill="#381119" />
+        <text x="96" y="38" fill="#ef4444" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          🥊 MMA TRAINING
         </text>
 
-        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
-          Empowering Next-Gen Engineers
+        <!-- Illustration Motif (Combat cage &amp; strike icon) -->
+        <g transform="translate(440, 22)">
+          <circle cx="24" cy="24" r="22" fill="#2a121d" stroke="#ef4444" stroke-width="1.5" />
+          <text x="24" y="31" font-size="20" text-anchor="middle">🥊</text>
+        </g>
+
+        <!-- Headline -->
+        <text x="24" y="80" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          Combat Conditioning &amp; Grit
         </text>
         
-        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          Author of "learn-python-step-by-step" open course. Passionate about
+        <!-- Story Body -->
+        <text x="24" y="114" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Discipline in the cage mirrors engineering under pressure:
         </text>
-        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          demystifying test automation, Docker fundamentals, and Playwright
+        <text x="24" y="134" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          mastering striking angles, takedown defense, and calm execution.
         </text>
-        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          for career switchers and aspiring platform specialists.
+        <text x="24" y="154" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Mental toughness, quick reflexes, and absolute focus.
         </text>
 
-        <g transform="translate(24, 190)">
-          <rect width="200" height="44" rx="8" fill="#182142" stroke="#27376a" stroke-width="1" />
-          <text x="16" y="22" fill="#38bdf8" class="font-mono" font-size="14" font-weight="800">500+</text>
-          <text x="60" y="22" fill="#94a3b8" class="font-sans" font-size="11">Engineers Mentored</text>
-          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Python • QA • DevOps</text>
+        <!-- Stat / Pill -->
+        <g transform="translate(24, 185)">
+          <rect width="240" height="48" rx="10" fill="#22121e" stroke="#4a1c30" stroke-width="1" />
+          <text x="16" y="24" fill="#ef4444" class="font-mono" font-size="15" font-weight="800">WARRIOR</text>
+          <text x="98" y="24" fill="#94a3b8" class="font-sans" font-size="11">Mindset &amp; Focus</text>
+          <text x="16" y="40" fill="#64748b" class="font-mono" font-size="9">Striking • Grappling • Endurance</text>
         </g>
       </g>
 
-      <!-- ================= SLIDE 2: RESEARCH ================= -->
+      <!-- ================= SLIDE 2: PSYCHOLOGY & SCI-FI ================= -->
       <g class="al-slide-2" transform="translate(710, 195)">
-        <rect width="520" height="260" rx="16" fill="#16122d" stroke="#312257" stroke-width="1" />
+        <rect width="520" height="265" rx="16" fill="#14122d" stroke="#2c2057" stroke-width="1" />
         
-        <rect x="24" y="24" width="150" height="24" rx="6" fill="#2e1545" />
-        <text x="99" y="40" fill="#c084fc" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
-          🔬 AGENTIC RESEARCH
+        <!-- Badge -->
+        <rect x="24" y="22" width="180" height="24" rx="6" fill="#251545" />
+        <text x="114" y="38" fill="#c084fc" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          🧠 PSYCHOLOGY &amp; SCI-FI
         </text>
 
-        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
-          Exploring LLMs &amp; Deep Evals
+        <!-- Illustration Motif -->
+        <g transform="translate(440, 22)">
+          <circle cx="24" cy="24" r="22" fill="#1e173e" stroke="#a78bfa" stroke-width="1.5" />
+          <text x="24" y="31" font-size="20" text-anchor="middle">🌌</text>
+        </g>
+
+        <!-- Headline -->
+        <text x="24" y="80" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          Cognitive Models &amp; Speculative Sci-Fi
         </text>
         
-        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          Constantly experimenting with multi-agent orchestration, LangGraph,
+        <!-- Story Body -->
+        <text x="24" y="114" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Deep-diving into human behavior heuristics, cognitive psychology,
         </text>
-        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          and rigorous benchmarking suites to create self-healing, reliable
+        <text x="24" y="134" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          and cybernetic world-building through cinema (Interstellar, Matrix,
         </text>
-        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          software pipelines that operate autonomously in production.
+        <text x="24" y="154" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Blade Runner) — exploring the future of artificial and human minds.
         </text>
 
-        <g transform="translate(24, 190)">
-          <rect width="200" height="44" rx="8" fill="#22163b" stroke="#422974" stroke-width="1" />
-          <text x="16" y="22" fill="#c084fc" class="font-mono" font-size="14" font-weight="800">100%</text>
-          <text x="60" y="22" fill="#94a3b8" class="font-sans" font-size="11">Hands-on Driven</text>
-          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Open Source Advocate</text>
+        <!-- Stat / Pill -->
+        <g transform="translate(24, 185)">
+          <rect width="240" height="48" rx="10" fill="#1f183d" stroke="#3b2a6b" stroke-width="1" />
+          <text x="16" y="24" fill="#a78bfa" class="font-mono" font-size="15" font-weight="800">INSIGHT</text>
+          <text x="86" y="24" fill="#94a3b8" class="font-sans" font-size="11">Behavior &amp; Systems</text>
+          <text x="16" y="40" fill="#64748b" class="font-mono" font-size="9">Psychology Books • Sci-Fi Cinema</text>
         </g>
       </g>
 
-      <!-- ================= SLIDE 3: FITNESS & MINDSET ================= -->
+      <!-- ================= SLIDE 3: TRAVEL WITH STRANGERS ================= -->
       <g class="al-slide-3" transform="translate(710, 195)">
-        <rect width="520" height="260" rx="16" fill="#241223" stroke="#4e1e47" stroke-width="1" />
+        <rect width="520" height="265" rx="16" fill="#0f1c24" stroke="#183b38" stroke-width="1" />
         
-        <rect x="24" y="24" width="160" height="24" rx="6" fill="#3d1334" />
-        <text x="104" y="40" fill="#f472b6" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
-          ⚡ DISCIPLINE &amp; FITNESS
+        <!-- Badge -->
+        <rect x="24" y="22" width="190" height="24" rx="6" fill="#0d2e27" />
+        <text x="119" y="38" fill="#34d399" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700">
+          🎒 TRAVEL WITH STRANGERS
         </text>
 
-        <text x="24" y="82" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
-          High Endurance &amp; Focus
+        <!-- Illustration Motif -->
+        <g transform="translate(440, 22)">
+          <circle cx="24" cy="24" r="22" fill="#122b27" stroke="#34d399" stroke-width="1.5" />
+          <text x="24" y="31" font-size="20" text-anchor="middle">🏔️</text>
+        </g>
+
+        <!-- Headline -->
+        <text x="24" y="80" fill="#ffffff" class="font-sans" font-size="22" font-weight="800">
+          Solo Expeditions &amp; Shared Roads
         </text>
         
-        <text x="24" y="116" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          Consistency inside the gym mirrors engineering excellence:
+        <!-- Story Body -->
+        <text x="24" y="114" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Backpacking into the unfamiliar with fellow travelers who start
         </text>
-        <text x="24" y="136" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          structured routines, deliberate practice, continuous iteration,
+        <text x="24" y="134" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          as strangers and become lifelong friends around a campfire.
         </text>
-        <text x="24" y="156" fill="#cbd5e1" class="font-sans" font-size="13.5">
-          and fuel powered by artisanal coffee and clear thinking.
+        <text x="24" y="154" fill="#cbd5e1" class="font-sans" font-size="13.5">
+          Embracing spontaneous trails, varied cultures, and uncharted paths.
         </text>
 
-        <g transform="translate(24, 190)">
-          <rect width="200" height="44" rx="8" fill="#30162a" stroke="#5f2452" stroke-width="1" />
-          <text x="16" y="22" fill="#f472b6" class="font-mono" font-size="14" font-weight="800">DAILY</text>
-          <text x="66" y="22" fill="#94a3b8" class="font-sans" font-size="11">Fitness Routine</text>
-          <text x="16" y="36" fill="#64748b" class="font-mono" font-size="9">Mindset &amp; Resilience</text>
+        <!-- Stat / Pill -->
+        <g transform="translate(24, 185)">
+          <rect width="240" height="48" rx="10" fill="#132b25" stroke="#1e4d3f" stroke-width="1" />
+          <text x="16" y="24" fill="#34d399" class="font-mono" font-size="15" font-weight="800">EXPLORE</text>
+          <text x="96" y="24" fill="#94a3b8" class="font-sans" font-size="11">Uncharted Trails</text>
+          <text x="16" y="40" fill="#64748b" class="font-mono" font-size="9">Solo Trips • Remote Treks • Stories</text>
         </g>
       </g>
 
-      <!-- Bottom Activity Rings Indicator -->
+      <!-- Bottom Activity Rings Indicator (Combat, Mind, Wander) -->
       <g transform="translate(710, 480)">
-        <!-- Ring 1: Code -->
+        <!-- Ring 1: Combat (MMA) -->
         <g transform="translate(40, 40)">
           <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
-          <circle cx="0" cy="0" r="24" fill="none" stroke="#22d3ee" stroke-width="4" class="ring-code" transform="rotate(-90)" />
-          <text x="0" y="4" fill="#22d3ee" font-size="10" text-anchor="middle" class="font-mono">CODE</text>
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#ef4444" stroke-width="4" class="ring-mma" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#ef4444" font-size="10" text-anchor="middle" class="font-mono">MMA</text>
         </g>
-        <!-- Ring 2: Learn -->
+        <!-- Ring 2: Mind (Psych & Sci-Fi) -->
         <g transform="translate(130, 40)">
           <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
-          <circle cx="0" cy="0" r="24" fill="none" stroke="#a78bfa" stroke-width="4" class="ring-learn" transform="rotate(-90)" />
-          <text x="0" y="4" fill="#a78bfa" font-size="10" text-anchor="middle" class="font-mono">TEACH</text>
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#a78bfa" stroke-width="4" class="ring-psy" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#a78bfa" font-size="10" text-anchor="middle" class="font-mono">MIND</text>
         </g>
-        <!-- Ring 3: Mindset -->
+        <!-- Ring 3: Wander (Travel) -->
         <g transform="translate(220, 40)">
           <circle cx="0" cy="0" r="24" fill="none" stroke="#1e2544" stroke-width="4" />
-          <circle cx="0" cy="0" r="24" fill="none" stroke="#f472b6" stroke-width="4" class="ring-health" transform="rotate(-90)" />
-          <text x="0" y="4" fill="#f472b6" font-size="10" text-anchor="middle" class="font-mono">GROW</text>
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#10b981" stroke-width="4" class="ring-trv" transform="rotate(-90)" />
+          <text x="0" y="4" fill="#10b981" font-size="10" text-anchor="middle" class="font-mono">TREK</text>
         </g>
 
-        <text x="280" y="44" fill="#64748b" class="font-mono" font-size="11">
-          "Continuous improvement is better than delayed perfection."
+        <text x="280" y="44" fill="#94a3b8" class="font-mono" font-size="11">
+          "Life begins at the edge of your comfort zone."
         </text>
       </g>
     </g>
